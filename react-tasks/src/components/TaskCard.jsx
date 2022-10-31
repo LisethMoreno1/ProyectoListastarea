@@ -11,28 +11,27 @@ import { tasks } from "../data/tasks";
 
 function TaskCard({ task }) {
   // const [marcado,setMarcado]= useState(false);
- 
- 
+
       const { deleteTask } = useContext(TaskContext);
       const { editarTask } = useContext(TaskContext);
       const { ModificarTask } = useContext(TaskContext);
       const [isSubscribed, setIsSubscribed] = useState(false);
       
 
-   const handleChange = (e) => {
-     if (e.target.checked) {
-       console.log("✅ Checkbox is checked");
-     } else {
-       console.log("⛔️ Checkbox is NOT checked");
-       Swal.fire({
-         icon: "error",
-         title: "La tarea no esta realizada",
-         showConfirmButton: false,
-         timer: 1500,
-       });
-     }
-     setIsSubscribed((current) => !current);
-   };
+const handleChange = (e) => {
+if (e.target.checked) {
+      console.log("✅ Checkbox is checked");
+    } else {
+      console.log("⛔️ Checkbox is NOT checked");
+      Swal.fire({
+        icon: "error",
+        title: "La tarea no esta realizada",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+    setIsSubscribed((current) => !current);
+  };
 
 
   //  -------------------------------------------------------
