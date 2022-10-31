@@ -9,6 +9,7 @@ export function useLocalStorage (key, initialState) {
       return item ? JSON.parse(item) : initialState;
     } catch(error){
       return initialState;
+  
     }
   });
 

@@ -13,7 +13,6 @@ function TaskCard({ task }) {
 
 
       const { deleteTask } = useContext(TaskContext);
-      // const { editarTask } = useContext(TaskContext);
       const { ModificarTask } = useContext(TaskContext);
       const [isSubscribed, setIsSubscribed] = useState(false);
       
@@ -35,6 +34,8 @@ if (e.target.checked) {
     setIsSubscribed((current) => !current);
   };
 
+  
+
   return (
     <div className="taskcardE">
       <h4 className="Cardh1">
@@ -48,7 +49,7 @@ if (e.target.checked) {
       <button className="DeleteBoton" onClick={() => deleteTask(task.id)}>
         <AiFillDelete />
       </button>
-      <button className="EditarBoton">
+      <button className="EditarBoton" >
         <AiFillEdit />
       </button>
     </div>
