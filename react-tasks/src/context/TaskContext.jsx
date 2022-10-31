@@ -7,7 +7,7 @@ export  const TaskContext = createContext();
 
 
 export  function TaskContextProvider(props) {
-   const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
   function createTask(task) {
     setTasks([
@@ -32,7 +32,7 @@ export  function TaskContextProvider(props) {
       },
     ]);
   }
- 
+
     function deleteTask(taskId) {
       setTasks(tasks.filter((task) => task.id !== taskId));
       Swal.fire({
@@ -56,7 +56,7 @@ export  function TaskContextProvider(props) {
         setTasks(data);
       }, []);
 
-     
+
 
   return (
     <TaskContext.Provider
