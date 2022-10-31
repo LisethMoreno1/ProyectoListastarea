@@ -6,8 +6,8 @@ import { tasks as data } from "../data/tasks";
 export  const TaskContext = createContext();
 
 
-export  function TaskContextProvider(props) {
-    const [tasks, setTasks] = useState([]);
+export function TaskContextProvider(props) {
+  const [tasks, setTasks] = useState([]);
 
   function createTask(task) {
     setTasks([
@@ -21,42 +21,31 @@ export  function TaskContextProvider(props) {
     ]);
   }
 
-  function editarTask(task) {
-    setTasks([
-      ...tasks,
-      {
-        title: task.title,
-        id: task.length,
-        description: task.description,
-        complete: task.complete,
-      },
-    ]);
+
+  function deleteTask(taskId) {
+    setTasks(tasks.filter((task) => task.id !== taskId));
+    Swal.fire({
+      icon: "",
+      title: "La Tarea ha sido Eliminada de manera sactifactoria",
+    });
   }
 
-    function deleteTask(taskId) {
-      setTasks(tasks.filter((task) => task.id !== taskId));
-      Swal.fire({
-        icon: "" ,
-        title: "La Tarea ha sido Eliminada de manera sactifactoria",
-      });
-    }
-
-      function ModificarTask() {
-        Swal.fire({
-            icon: "success",
-            title: "Tarea realizada",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        
-      }
-      
-
-      useEffect(() => {
-        setTasks(data);
-      }, []);
+  function ModificarTask() {
+    Swal.fire({
+      icon: "success",
+      title: "Tarea realizada",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 
 
+
+
+
+  useEffect(() => {
+    setTasks(data);
+  }, []);
 
   return (
     <TaskContext.Provider
@@ -65,7 +54,6 @@ export  function TaskContextProvider(props) {
         deleteTask,
         createTask,
         ModificarTask,
-        editarTask,
       }}
     >
       {props.children}
