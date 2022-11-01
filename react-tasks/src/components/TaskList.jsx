@@ -4,18 +4,19 @@ import { TaskContext } from "../context/TaskContext";
 import "../style/tasklist.css";
 
 
+
 function TaskList() {
  const { tasks } = useContext(TaskContext);
-
+ 
   
   if (tasks.length===0){
     return <h1 className="taskh1">No hay Tareas</h1>
   }
 
   return (
-    <div>
-      {tasks.map((task) => (
-        <TaskCard key={task.id} task={task}  />
+    <div >
+      {tasks.map((task, id) => (
+        <TaskCard key={id} task={task} />
       ))}
     </div>
   );
