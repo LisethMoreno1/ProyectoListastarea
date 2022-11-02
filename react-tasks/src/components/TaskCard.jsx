@@ -28,7 +28,8 @@ if (e.target.checked) {
         icon: "error",
         title: "La tarea no esta realizada",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 4500,
+       
       });
     }
     setIsSubscribed((current) => !current);

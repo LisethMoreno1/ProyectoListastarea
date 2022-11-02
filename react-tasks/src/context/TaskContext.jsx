@@ -42,7 +42,6 @@ export function TaskContextProvider(props) {
 
 
 
-
   useEffect(() => {
     setTasks(data);
   }, []);
