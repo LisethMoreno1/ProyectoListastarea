@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { FaPlus } from 'react-icons/fa'
-import { Input } from '../Input'
+import { Input } from '../Input/Input.index'
 import styles from './form.module.css'
+
 
 
 export function Form({ onSubmit }) {
@@ -20,6 +21,7 @@ export function Form({ onSubmit }) {
 
       onSubmit(newTask)
       setTaskName('')
+
     }
   }
 
@@ -32,6 +34,9 @@ export function Form({ onSubmit }) {
         onChange={(event) => setTaskName(event.target.value)}
       />
 
+      
+
+
       <button
         type="submit"
         disabled={taskName === ""}
@@ -40,6 +45,7 @@ export function Form({ onSubmit }) {
         <FaPlus size={12} />
         Añadir
       </button>
+      
     </form>
   );
 }
