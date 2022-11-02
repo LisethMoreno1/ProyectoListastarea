@@ -1,6 +1,6 @@
 import { FaTrashAlt } from 'react-icons/fa'
+import styles from './task.module.css'
 
-import styles from './index.module.css'
 
 export function Task({ id, name, completed, onRemove, onChangeCompleted }) {
   return (

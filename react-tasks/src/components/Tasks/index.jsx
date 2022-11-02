@@ -1,9 +1,8 @@
 import { useMemo } from 'react'
-
 import { Task } from '../Task'
 import { BoxAlert } from '../BoxAlert'
+import styles from './tasks.module.css'
 
-import styles from './index.module.css'
 
 export function Tasks({ tasks, searchTaskName, onRemoveTask, onChangeCompletedTask }) {
 

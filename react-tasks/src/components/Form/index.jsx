@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { FaPlus } from 'react-icons/fa'
-
 import { Input } from '../Input'
-import styles from './index.module.css'
+import styles from './form.module.css'
+
 
 export function Form({ onSubmit }) {
   const [taskName, setTaskName] = useState('')

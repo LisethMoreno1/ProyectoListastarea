@@ -1,6 +1,6 @@
 import { FaInfoCircle } from "react-icons/fa";
-
-import styles from './index.module.css'
+// import styles from "./alertas.css";
+import styles from './alertas.module.css'
 
 export function BoxAlert({ type }) {
   return (
