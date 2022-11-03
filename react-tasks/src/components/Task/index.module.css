@@ -1,0 +1,47 @@
+.task {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 16px;
+  border-radius:  6px;
+  background: #000000;
+}
+
+.task.completed {
+  opacity: 0.6;
+}
+
+.task.completed span {
+  text-decoration: line-through;  
+}
+
+.task__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: white;
+}
+
+.task__checkbox:hover {
+  cursor: pointer;
+}
+
+.task__name {
+  font-size: 18px;
+  margin-right: auto;
+}
+
+.task__button {
+  color: #bbbbbb;
+
+  border: 0;
+  opacity: 0.7;
+  background: transparent;
+
+  transition: all 0.2s;
+}
+
+.task__button:hover {
+  color: #f50909fa;
+  border-color: #F95738;
+  opacity: 1;
+}
