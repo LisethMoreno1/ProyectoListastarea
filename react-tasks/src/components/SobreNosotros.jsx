@@ -3,7 +3,7 @@ import React from 'react'
 export default function SobreNosotros() {
   return (
     <>
-      <h1>Sobre nosotros</h1>
+      <h1 style={{ textAlign: "center" }}>Sobre Nosotros</h1>
       <h3 style={{ color: "black", textAlign: "center" }}>Mi lista de Tarea</h3>
       <hr />
       <p style={{ color: "black" }}>
@@ -22,10 +22,23 @@ export default function SobreNosotros() {
         <li>Eliminar tareas</li>
         <li>Y más Actualizaciones en el Furuto</li>
       </ul>
-      <p>Desarrollador : Liseth Moreno</p>
+
+      <ul>
+        <li>Lenguaje : Javascript y React</li>
+        <li> Libreria : sweetalert2 </li>
+        <li>Icon :Reac Icon</li>
+      </ul>
+      <p style={{ color: "black", textAlign: "center" }}>
+        Desarrollador : Liseth Moreno
+      </p>
 
       <p style={{ textAlign: "center" }}>Redes Sociales</p>
-      <a href="https://github.com/LisethMoreno1">GITHUB</a>
+      <a
+        href="https://github.com/LisethMoreno1"
+        style={{ color: "black", textAlign: "center" }}
+      >
+        GITHUB
+      </a>
     </>
   );
 }
