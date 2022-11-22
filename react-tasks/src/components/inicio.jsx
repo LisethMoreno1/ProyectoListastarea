@@ -5,7 +5,7 @@ import { Input } from "./Input/Input.index";
 import { Tasks } from "./Tasks/Tasks.index";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "../styles/app.module.css";
-
+import { ChakraProvider, Heading, extendTheme } from "@chakra-ui/react";
 const LOCALSTORAGE_TASKS_KEY = "todolist-tasks";
 
 
@@ -74,50 +74,60 @@ export default function Inicio() {
     const totalCompletedTasks = useMemo(() => {
       return tasks.filter((task) => task.completed).length;
     });
+
+      const theme = extendTheme({
+        config: {
+          useSystemColorMode: false,
+          initialColorMode: "dark",
+        },
+      });
+
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h1>Lista De Tareas</h1>
+    <ChakraProvider theme={theme}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h1>Lista De Tareas</h1>
 
-        <Form onSubmit={onAddTask} />
+          <Form onSubmit={onAddTask} />
 
-        <hr />
+          <hr />
 
-        <Input
-          type="text"
-          value={searchTaskName}
-          onChange={handleTermSearch}
-          placeholder="Buscar una tarea"
-        />
+          <Input
+            type="text"
+            value={searchTaskName}
+            onChange={handleTermSearch}
+            placeholder="Buscar una tarea"
+          />
 
-        <Tasks
-          tasks={tasks}
-          searchTaskName={searchTaskName}
-          onRemoveTask={onRemoveTask}
-          onEditTask={onEditTask}
-          onDeleteAllTask={onDeleteAllTask}
-          onChangeCompletedTask={onChangeCompleted}
-        />
+          <Tasks
+            tasks={tasks}
+            searchTaskName={searchTaskName}
+            onRemoveTask={onRemoveTask}
+            onEditTask={onEditTask}
+            onDeleteAllTask={onDeleteAllTask}
+            onChangeCompletedTask={onChangeCompleted}
+          />
 
-        <footer className={styles.footer}>
-          <h6>
-            Total de tareas:
-            <span>{totalTasks}</span>
-          </h6>
+          <footer className={styles.footer}>
+            <h6>
+              Total de tareas:
+              <span>{totalTasks}</span>
+            </h6>
 
-          <h6>
-            Total de tareas realizadas:
-            <span>{totalCompletedTasks}</span>
-          </h6>
-          <h6
-            type="button"
-            className={styles.footer}
-            onClick={() => onDeleteAllTask(id, name)}
-          >
-            <FaTrashAlt size={16} />
-          </h6>
-        </footer>
+            <h6>
+              Total de tareas realizadas:
+              <span>{totalCompletedTasks}</span>
+            </h6>
+            <h6
+              type="button"
+              className={styles.footer}
+              onClick={() => onDeleteAllTask(id, name)}
+            >
+              <FaTrashAlt size={16} />
+            </h6>
+          </footer>
+        </div>
       </div>
-    </div>
+    </ChakraProvider>
   );
 }
