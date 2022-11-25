@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import "./menu.css";
 export default function Menu () {
   return (
     <div>
-      <nav>
-        <h1>Principal</h1>
-        <Link to="/" className="navLi">
+      <h1>Principal</h1>
+      <nav className="container">
+        <Link to="/Menu" className="navLi">
           Home
         </Link>
         <br />
@@ -18,6 +19,5 @@ export default function Menu () {
         </Link>
       </nav>
     </div>
-    
   );
 }
